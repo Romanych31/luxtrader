@@ -1,0 +1,62 @@
+// подключение шрифтов с помощью gulp
+@mixin font($fontName, $fileName, $weight, $style) {
+   @font-face {
+      font-family: $fontName;
+      font-display: swap;
+      src: url("../fonts/#{$fileName}.woff") format("woff"), url("../fonts/#{$fileName}.woff2") format("woff2");
+      font-weight: #{$weight};
+      font-style: #{$style};
+   }
+}
+
+//Адаптивный шрифт
+@mixin adaptiv-font($pcSize, $mobSize, $maxSize) {
+   $addSize: $pcSize - $mobSize;
+   @if $maxSize==1 {
+      //Только если меньше контейнера
+      font-size: $pcSize + px;
+      @media (max-width: #{$maxWidthContainer + px}) {
+         font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+      }
+   } @else if $maxSize==2 {
+      //Только если больше контейнера
+      font-size: $pcSize + px;
+      @media (min-width: #{$maxWidthContainer + px}) {
+         font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+      }
+   } @else {
+      //Всегда
+      font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+   }
+}
+
+//Адаптивное свойство
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+   $addSize: $startSize - $minSize;
+   @if $type==1 {
+      //Только если меньше контейнера
+      #{$property}: $startSize + px;
+      @media (max-width: #{$maxWidthContainer + px}) {
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+      }
+   } @else if $type==2 {
+      //Только если больше контейнера
+      #{$property}: $startSize + px;
+      @media (min-width: #{$maxWidthContainer + px}) {
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+      }
+   } @else {
+      //Всегда
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+   }
+}
+
+//triangle shape
+@mixin triangle($width: 10, $height: 10, $angle: 0, $color: #000) {
+   width: 0;
+   height: 0;
+   border-bottom: $height + px solid $color;
+   border-right: $width / 2 + px solid transparent;
+   border-left: $width / 2 + px solid transparent;
+   transform: rotate($angle + deg);
+}

@@ -1,0 +1,45 @@
+<svg id="icon2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="76.16" viewBox="0 0 78 76.16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1c242a;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+        stroke: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #bb9c66;
+        filter: url(#filter);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1000.5" y1="1672.16" x2="1000.5" y2="1599" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9e7a47"/>
+      <stop offset="0.498" stop-color="#c8ae80"/>
+      <stop offset="0.502" stop-color="#efdcba"/>
+      <stop offset="1" stop-color="#c8ae80"/>
+    </linearGradient>
+    <filter id="filter" x="981" y="1620" width="38" height="36" filterUnits="userSpaceOnUse">
+      <feImage preserveAspectRatio="none" x="981" y="1620" width="38" height="36" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzgiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzOCAzNiI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgb3BhY2l0eTogMC45NjsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjE5IiB5MT0iMzYiIHgyPSIxOSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM5ZTdhNDciLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ5IiBzdG9wLWNvbG9yPSIjYzhhZTgwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC41MDIiIHN0b3AtY29sb3I9IiNlZmRjYmEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYzhhZTgwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCBjbGFzcz0iY2xzLTEiIHdpZHRoPSIzOCIgaGVpZ2h0PSIzNiIvPgo8L3N2Zz4K"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" mode="softLight" in2="SourceGraphic"/>
+      <feGaussianBlur result="blur" stdDeviation="4.333" in="SourceAlpha"/>
+      <feFlood result="flood" flood-color="#fff" flood-opacity="0.24"/>
+      <feComposite result="composite-3" operator="out" in2="blur"/>
+      <feComposite result="composite-2" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-2" mode="screen" in2="blend"/>
+      <feGaussianBlur result="blur-2" in="SourceAlpha"/>
+      <feFlood result="flood-2" flood-color="#fff1d8" flood-opacity="0.44"/>
+      <feComposite result="composite-4" operator="out" in2="blur-2"/>
+      <feOffset result="offset" dy="1"/>
+      <feComposite result="composite-5" operator="in" in2="SourceAlpha"/>
+      <feBlend result="blend-3" in2="blend-2"/>
+    </filter>
+  </defs>
+  <path class="cls-1" d="M1000.5,1599c20.71,0,37.5,16.38,37.5,36.57s-16.79,36.58-37.5,36.58-37.5-16.38-37.5-36.58S979.789,1599,1000.5,1599Z" transform="translate(-961.5 -1597.5)"/>
+  <path class="cls-2" d="M1012.12,1620.01H987.873L981,1629.8l19,26.2,19-26.2Zm-15.183,8.28,3.06-4.13,3.063,4.13h-6.123Zm6.683,2.98L1000,1646.56l-3.619-15.29h7.242Zm-0.82-8.28h5.81l-2.91,3.92Zm-8.507,3.92-2.906-3.92H997.2Zm-2.646,1.38h-5.991l2.917-4.15Zm1.714,2.98,3.709,15.67-11.359-15.67h7.65Zm13.269,0h7.65l-11.35,15.66Zm1.72-2.98,3.07-4.14,2.91,4.14h-5.98Z" transform="translate(-961.5 -1597.5)"/>
+</svg>
