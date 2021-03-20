@@ -4,3 +4,6 @@ sources/.vscode/
 node_modules
 package-lock.json
 .vscode
+sources\js\index.min.js.map
+sources\js\vendors.min.js.map
+sources\css\style.min.css.map
