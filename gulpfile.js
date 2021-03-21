@@ -137,13 +137,6 @@ function css() {
 }
 
 //работа с js
-/*
-function minjs() {
-   return src(path.src.minjs)
-      .pipe(dest(path.build.js))
-      .pipe(browsersync.stream())
-}
-*/
 function js() {
    src(path.src.minjs)
       .pipe(fileInclude())
