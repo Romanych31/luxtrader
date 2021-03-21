@@ -30,8 +30,6 @@ button:focus {
    overflow: hidden;
    display: flex;
    flex-direction: column;
-   &._loaded {
-   }
 }
 //-----------------------------------------------------------------------
 
@@ -239,9 +237,12 @@ button:focus {
       @include adaptiv-value(padding-bottom, 50, 30, 1);
       min-height: 400px;
       background-color: #2c3c47;
-      background: url("../img/bg.jpg") center / cover no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("../img/bg.jpg");
       &:nth-child(2) {
-         background: url("../img/bg-2.jpg") center / cover no-repeat;
+         background-image: url("../img/bg-2.jpg");
       }
    }
    // .main-slider__container
@@ -1017,6 +1018,7 @@ button:focus {
    &__description {
       flex: 1 1 auto;
       margin-bottom: 30px;
+      max-width: 100%;
       text-align: center;
       @include adaptiv-font(15, 12, 1);
       line-height: 1.66;
@@ -1271,6 +1273,7 @@ button:focus {
       margin: 0 -40px;
       display: flex;
       flex-wrap: wrap;
+      -ms-flex-wrap: nowrap;
       @media (max-width: $md2 + px) {
          margin: 0 -20px;
       }
@@ -1279,6 +1282,7 @@ button:focus {
    &__section {
       padding: 0px 40px;
       flex: 0 0 50%;
+      flex-basis: 50%;
       @media (max-width: $md2 + px) {
          padding: 0px 20px;
       }
@@ -1362,6 +1366,7 @@ button:focus {
       margin: 0 -40px;
       display: flex;
       flex-wrap: wrap;
+      -ms-flex-wrap: nowrap;
       align-items: center;
       @media (max-width: $md2 + px) {
          margin: 0 -20px;
@@ -1369,8 +1374,8 @@ button:focus {
    }
    // .subscribe-section__col
    &__col {
-      flex: 0 0 50%;
       padding: 0 40px;
+      flex: 0 0 50%;
       &:first-child {
          flex: 0 0.5 50%;
       }

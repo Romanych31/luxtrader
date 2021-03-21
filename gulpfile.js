@@ -19,13 +19,22 @@ let path = {
       html: sourceFolder + "/*.html",
       mincss: sourceFolder + "/scss/**/*.min.css",
       css: sourceFolder + "/scss/style.scss",
-      js: [sourceFolder + "/js/*.js"],
-      minjs: sourceFolder + "/js/**/*.min.js",
-      img: [
-         sourceFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-         "!" + sourceFolder + "/img/**/sprite/*.{png,jpeg}",
-         "!" + sourceFolder + "/img/**/sprite.{jpg,png}"
+      js: [
+         sourceFolder + "/js/*.js",
+         "!" + sourceFolder + "/js/*.min.js"
       ],
+      minjs: sourceFolder + "/js/*.min.js",
+      img: {
+         img: [
+            sourceFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+            "!" + sourceFolder + "/img/**/sprite/*.{png,jpeg}",
+            "!" + sourceFolder + "/img/**/sprite.{jpg,png}",
+            "!" + sourceFolder + "/img/icons/**/*.{jpg,png,svg,gif,ico,webp}",
+            "!" + sourceFolder + "/img/logo/**/*.{jpg,png,svg,gif,ico,webp}",
+         ],
+         icons: sourceFolder + "/img/icons/**/*.{jpg,png,svg,gif,ico,webp}",
+         logo: sourceFolder + "/img/logo/**/*.{jpg,png,svg,gif,ico,webp}",
+      },
       sprite: sourceFolder + "/img/**/sprite.{png,jpg}",
       fonts: sourceFolder + "/fonts/*.ttf",
    },
@@ -34,7 +43,6 @@ let path = {
       html: sourceFolder + "/**/*.html",
       mincss: sourceFolder + "/scss/**/*.min.css",
       css: sourceFolder + "/scss/**/*.scss",
-      minjs: sourceFolder + "/js/**/*.min.js",
       js: sourceFolder + "/js/**/*.js",
       img: sourceFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
    },
@@ -112,7 +120,11 @@ function css() {
          overrideBrowserslist: ["last 5 versions"],
          cascade: true,
       }))
-      .pipe(webpCss())
+      .pipe(webpCss({
+         webpClass: '',
+         noWebpClass: '.no-webp',
+         replace_from: /\.(jpg|jpeg)/g,
+      }))
       .pipe(dest(path.build.css))                        // выгружает обычный файл css
       .pipe(browsersync.stream())
       .pipe(cleanCss())                                 // сжимает и чистит файл css
@@ -133,6 +145,9 @@ function minjs() {
 }
 */
 function js() {
+   src(path.src.minjs)
+      .pipe(fileInclude())
+      .pipe(dest(path.build.js));
    return src(path.src.js)       // метод получения исходных файлов по заданному пути
       .pipe(plumber())
       .pipe(sourcemaps.init())
@@ -152,13 +167,19 @@ function images() {
    src(path.src.sprite)
       .pipe(newer(path.build.img))
       .pipe(dest(path.build.img));
-   return src(path.src.img)       // метод получения исходных файлов по заданному пути
+   src(path.src.img.icons)
+      .pipe(newer(path.build.img))
+      .pipe(dest(path.build.img + 'icons/'));
+   src(path.src.img.logo)
+      .pipe(newer(path.build.img))
+      .pipe(dest(path.build.img + 'logo/'));
+   return src(path.src.img.img)       // метод получения исходных файлов по заданному пути
       .pipe(newer(path.build.img))
       .pipe(webp({
          quality: 70          // качество/сжатие
       }))
       .pipe(dest(path.build.img)) //выгрузка изображений webp
-      .pipe(src(path.src.img))    // обращение к исходникам для последующей обработки изображений других форматов
+      .pipe(src(path.src.img.img))    // обращение к исходникам для последующей обработки изображений других форматов
       .pipe(newer(path.build.img))
       .pipe(imageMin({           // настройки оптимизации
          progressive: true,

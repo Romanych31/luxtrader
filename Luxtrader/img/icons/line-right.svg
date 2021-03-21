@@ -1,1 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="399.5" height="25.625"><path d="M66.5 13.5v-1h332v1h-332zM12.82.5l12.32 12.319-12.32 12.319L.5 12.819zM38 5.5l7.51 7.5L38 20.5 30.5 13z" fill-rule="evenodd" fill="none" stroke="#bb9c66"/><circle cx="55" cy="13" r="4.5" fill="none" stroke="#bb9c66"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="399.5" height="25.625" viewBox="0 0 399.5 25.625">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #bb9c66;
+      }
+
+      .cls-1 {
+        stroke-width: 1px;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 1px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M1141,726v-1h332v1H1141Z" transform="translate(-1074.5 -712.5)"/>
+  <path class="cls-2" d="M1087.32,713l12.32,12.319-12.32,12.319L1075,725.319Z" transform="translate(-1074.5 -712.5)"/>
+  <path class="cls-2" d="M1112.5,718l7.51,7.5-7.51,7.5-7.5-7.5Z" transform="translate(-1074.5 -712.5)"/>
+  <circle class="cls-3" cx="55" cy="13" r="4.5"/>
+</svg>

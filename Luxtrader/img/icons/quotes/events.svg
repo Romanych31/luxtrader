@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="21" height="25"><defs><style>.cls-1{fill:#bb9c66;fill-rule:evenodd}</style></defs><path class="cls-1" d="M0 1V0h20v1H0zm20 12v1H0v-1h20zM0 0h1v25H0V0zm0 8V7h14v1H0z"/><path class="cls-1" d="M4 8V7l7-7v1zm5 0V7l6-7v1zM1 6V5l5-5v1zm-1 4V9h17v1H0zm0 2v-1h19v1H0zM21-.5z"/><path class="cls-1" d="M20.274-.009l.736.674-7.284 6.672-.736-.674zM12.99 7.337l.736-.674 7.285 6.672-.736.674z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="25" viewBox="0 0 21 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bb9c66;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M0,1V0H20V1H0ZM20,13v1H0V13H20ZM0,0H1V25H0V0ZM0,8V7H14V8H0Z"/>
+  <path class="cls-1" d="M4,8V7l7-7V1ZM9,8V7l6-7V1ZM1,6V5L6,0V1ZM0,10V9H17v1H0Zm0,2V11H19v1H0Z"/>
+  <path class="cls-1" d="M21-.5h0Z"/>
+  <path class="cls-1" d="M20.274-.009L21.01,0.665,13.726,7.337,12.99,6.663ZM12.99,7.337l0.736-.674,7.285,6.672-0.736.674Z"/>
+</svg>
