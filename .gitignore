@@ -1,9 +1,7 @@
-sources/node_modules/
-sources/package-lock.json
-sources/.vscode/
-node_modules
+
 package-lock.json
 .vscode
-sources\js\index.min.js.map
-sources\js\vendors.min.js.map
-sources\css\style.min.css.map
+node_modules
+js/index.min.js.map
+js/vendors.min.js.map
+/css/style.min.css.map
